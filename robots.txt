@@ -1,0 +1,22 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://bellefood.com/sitemap.xml
+
+# Crawl-delay for polite crawling
+Crawl-delay: 1
+
+# Disallow admin areas (if any in future)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*.json$
+
+# Allow important pages
+Allow: /index.html
+Allow: /styles.css
+Allow: /script.js
+Allow: /*.jpg$
+Allow: /*.png$
+Allow: /*.webp$
+
