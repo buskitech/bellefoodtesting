@@ -152,3 +152,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
     console.log("BelleFood Commercial Script Active. Happy Eating!");
 });
+
+//end
