@@ -4,186 +4,563 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BelleFood | Elite Late Night Eats</title>
-    <meta name="description" content="Premium Nigerian food delivery. Open 24/7 in Lagos. Peppery, Spicy, Authentic.">
-    <meta name="theme-color" content="#FF5722">
+    <title>BelleFood | Nigeria's Favorite Fast Food Delivery</title>
+    <meta name="description" content="Order authentic Nigerian food. Fast food delivery 24/7.">
 
-    <!-- Fonts -->
+    <!-- Fast Food Commercial Font: Poppins -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@400;700;900&family=Urbanist:wght@400;500;700&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap"
         rel="stylesheet">
 
     <link rel="stylesheet" href="styles.css">
+
+    <!-- Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 
 <body>
 
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="container nav-content">
-            <a href="#" class="logo">BELLE<span class="accent">.</span></a>
+    <!-- Header / Navigation -->
+    <header class="header" id="header">
+        <div class="container header-container">
+            <!-- Brand Logo -->
+            <a href="#" class="brand-logo">
+                <span class="brand-belle">Belle</span><span class="brand-food">Food</span>
+            </a>
 
-            <!-- Desktop Links -->
-            <div class="nav-links">
-                <a href="#menu" class="nav-item">Menu</a>
-                <a href="#features" class="nav-item">Why Us</a>
-            </div>
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i data-lucide="menu"></i>
+            </button>
 
+            <!-- Navigation Links -->
+            <nav class="nav-menu" id="navMenu">
+                <button class="close-menu-btn" id="closeMenuBtn">
+                    <i data-lucide="x"></i>
+                </button>
+                <a href="#menu" class="nav-link nav-link-close">Our Menu</a>
+                <a href="#how-it-works" class="nav-link nav-link-close">How it Works</a>
+                <a href="#reviews" class="nav-link nav-link-close">Reviews</a>
+                <a href="#contact" class="nav-link nav-link-close">Contact</a>
+                <!-- Mobile Only Actions -->
+                <div class="mobile-only-actions">
+                    <a href="https://wa.me/2349137421838?text=Hello" class="btn btn-primary btn-block" target="_blank">
+                        <i data-lucide="shopping-bag" size="18"></i> Order on WhatsApp
+                    </a>
+                </div>
+            </nav>
+
+            <!-- Desktop Actions -->
             <div class="nav-actions">
-                <!-- Theme Toggle -->
-                <button class="theme-toggle" id="theme-btn" aria-label="Toggle Theme">
-                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                        stroke-linecap="round" stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <line x1="12" y1="1" x2="12" y2="3"></line>
-                        <line x1="12" y1="21" x2="12" y2="23"></line>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                        <line x1="1" y1="12" x2="3" y2="12"></line>
-                        <line x1="21" y1="12" x2="23" y2="12"></line>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                    </svg>
-                </button>
-
-                <!-- CTA -->
-                <button class="btn btn-sm btn-primary" onclick="openWhatsApp('I want to order now')">Order Now</button>
-
-                <!-- Mobile Toggle -->
-                <button class="mobile-toggle" id="mobile-toggle" aria-label="Menu">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </button>
+                <a href="https://wa.me/2349137421838?text=Hello" class="btn btn-primary" target="_blank">
+                    <i data-lucide="shopping-bag" size="18"></i> Order Now
+                </a>
             </div>
+
+            <!-- Mobile Overlay -->
+            <div class="mobile-overlay" id="mobileOverlay"></div>
         </div>
-    </nav>
+    </header>
 
-    <!-- Mobile Menu Overlay -->
-    <div class="mobile-menu" id="mobile-menu">
-        <a href="#menu" class="nav-item" onclick="closeMobileMenu()">Menu</a>
-        <a href="#features" class="nav-item" onclick="closeMobileMenu()">Why Us</a>
-        <a href="#" class="nav-item" onclick="closeMobileMenu()">Contact</a>
-    </div>
-
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-bg-glow"></div>
-        <div class="container hero-container">
-            <div class="hero-content">
-                <div class="badge-pill">
-                    <span class="pulse"></span> 24/7 LAGOS DELIVERY
-                </div>
-                <h1 class="hero-title">
-                    <span class="outline">TASTE</span> THE<br>
-                    <span class="highlight">CULTURE.</span>
-                </h1>
-                <p class="hero-sub">
-                    Authentic Nigerian cuisine, delivered hot to your doorstep.
-                    From spicy Pepper Soup to smoky Jollof, we satisfy your late-night cravings.
-                </p>
-                <div class="hero-btns">
-                    <button class="btn btn-primary" onclick="scrollToSection('menu')">
-                        View Menu <span class="arrow">↗</span>
-                    </button>
-                    <button class="btn btn-outline" onclick="openWhatsApp('Do you deliver to my area?')">
-                        WhatsApp Us
-                    </button>
-                </div>
-            </div>
-            <div class="hero-visual">
-                <div class="image-wrapper">
-                    <img src="food/homepage.jpg" alt="Premium Food" class="floating-img">
-                    <div class="rating-card">
-                        <span class="star">★</span>
-                        <div>
-                            <strong>4.9</strong>
-                            <small>Showcased Taste</small>
-                        </div>
+    <main>
+        <!-- Text-Focused Minimal Hero Banner -->
+        <section class="hero-section">
+            <div class="container text-center">
+                <div class="hero-content">
+                    <div class="hero-pill">
+                        <i data-lucide="flame" size="18" color="#FFC72C"></i>
+                        <span>Lagos #1 Fast Food Delivery</span>
+                    </div>
+                    <h1 class="hero-title">Bite into <br><span class="text-yellow">Happiness.</span></h1>
+                    <p class="hero-subtitle">Hot, spicy Nigerian food delivered straight to your door in minutes. No
+                        long talk, just good food. Open 24/7.</p>
+                    <div class="hero-buttons">
+                        <a href="#menu" class="btn btn-primary btn-xl btn-yellow">Start Order</a>
+                        <a href="#how-it-works" class="btn btn-outline-white btn-xl">How It Works</a>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Marquee -->
-    <div class="marquee-container">
-        <div class="marquee-content">
-            <span>SPICY SUYA</span> ★ <span>SMOKY JOLLOF</span> ★ <span>PEPPER SOUP</span> ★ <span>ASARO</span> ★
-            <span>SPICY SUYA</span> ★ <span>SMOKY JOLLOF</span> ★ <span>PEPPER SOUP</span> ★ <span>ASARO</span> ★
-        </div>
-    </div>
-
-    <!-- Bento Grid Features -->
-    <section id="features" class="features-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="pre-title">OUR PROMISE</span>
-                <h2>Why <span class="accent">Belle?</span></h2>
-            </div>
-            <div class="bento-grid">
-                <div class="bento-card card-large">
-                    <h3>Lightning Fast</h3>
-                    <p>We deliver in under 30 minutes within Lagos Island.</p>
-                    <div class="bento-icon">⚡</div>
-                </div>
-                <div class="bento-card bento-dark">
-                    <h3>24/7 Service</h3>
-                    <p>Craving at 3AM? We are awake.</p>
-                </div>
-                <div class="bento-card">
-                    <h3>Hot & Fresh</h3>
-                    <p>Delivered steaming hot in premium packaging.</p>
-                </div>
-                <div class="bento-card card-wide">
-                    <h3>Authentic Taste</h3>
-                    <p>No shortcuts. Just pure, traditional recipes passed down.</p>
+        <!-- Category Filter Pills -->
+        <section class="categories-section bg-gray">
+            <div class="container">
+                <div class="category-list" id="categoryFilter">
+                    <button class="category-pill active" data-filter="all">All Items</button>
+                    <button class="category-pill" data-filter="rice">Rice Meals</button>
+                    <button class="category-pill" data-filter="soups">Soups & Swallows</button>
+                    <button class="category-pill" data-filter="snacks">Snacks & Sides</button>
+                    <button class="category-pill" data-filter="drinks">Drinks & Desserts</button>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Menu Section -->
-    <section id="menu" class="menu-section">
-        <div class="container">
-            <div class="section-header">
-                <span class="pre-title">OUR SELECTION</span>
-                <h2>Curated <span class="highlight">Menu</span></h2>
+        <!-- Highlight Menu Food Grid -->
+        <section id="menu" class="menu-section bg-gray">
+            <div class="container">
+                <div class="section-heading text-center">
+                    <h2>Our <span class="text-red">Menu</span></h2>
+                    <p>Explore our most popular and mouth-watering meals, made fresh every day.</p>
+                </div>
+
+                <div class="menu-grid" id="menuGrid">
+
+                    <!-- Food Item: Pepper Soup -->
+                    <div class="menu-card" data-category="soups">
+                        <div class="menu-card-img">
+                            <img src="food/peppersoup.jpg" alt="Goat Meat Pepper Soup">
+                        </div>
+                        <div class="menu-card-body">
+                            <h3 class="menu-item-title">Goat Meat Pepper Soup</h3>
+                            <p class="menu-item-desc">Spicy broth with tender goat meat & fresh scent leaves.</p>
+                            <div class="menu-card-footer">
+                                <span class="menu-price">₦2,500</span>
+                                <a href="https://wa.me/2349137421838?text=Order:%20Goat%20Meat%20Pepper%20Soup"
+                                    class="btn btn-sm btn-primary">Add <i data-lucide="plus" size="16"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Food Item: Jollof -->
+                    <div class="menu-card" data-category="rice">
+                        <div class="menu-card-img">
+                            <div class="product-tag tag-best">Best Seller</div>
+                            <img src="food/jollofrice.jpg" alt="Smoky Jollof Rice">
+                        </div>
+                        <div class="menu-card-body">
+                            <h3 class="menu-item-title">Smoky Party Jollof</h3>
+                            <p class="menu-item-desc">Authentic firewood flavor, served with fried plantain.</p>
+                            <div class="menu-card-footer">
+                                <span class="menu-price">₦3,000</span>
+                                <a href="https://wa.me/2349137421838?text=Order:%20Smoky%20Jollof%20Rice"
+                                    class="btn btn-sm btn-primary">Add <i data-lucide="plus" size="16"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Food Item: Suya -->
+                    <div class="menu-card" data-category="snacks">
+                        <div class="menu-card-img">
+                            <img src="food/suya.jpg" alt="Beef Suya">
+                        </div>
+                        <div class="menu-card-body">
+                            <h3 class="menu-item-title">Premium Beef Suya</h3>
+                            <p class="menu-item-desc">Tender grilled beef skewers dusted in our spicy Yaji rub.</p>
+                            <div class="menu-card-footer">
+                                <span class="menu-price">₦1,500</span>
+                                <a href="https://wa.me/2349137421838?text=Order:%20Beef%20Suya"
+                                    class="btn btn-sm btn-primary">Add <i data-lucide="plus" size="16"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Food Item: Plantain -->
+                    <div class="menu-card" data-category="snacks">
+                        <div class="menu-card-img">
+                            <img src="food/plantain.jpg" alt="Fried Plantain">
+                        </div>
+                        <div class="menu-card-body">
+                            <h3 class="menu-item-title">Golden Dodo</h3>
+                            <p class="menu-item-desc">Perfectly ripe, sweet plantains fried to a beautiful golden brown.
+                            </p>
+                            <div class="menu-card-footer">
+                                <span class="menu-price">₦800</span>
+                                <a href="https://wa.me/2349137421838?text=Order:%20Fried%20Plantain"
+                                    class="btn btn-sm btn-primary">Add <i data-lucide="plus" size="16"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Food Item: Noodles -->
+                    <div class="menu-card" data-category="rice">
+                        <div class="menu-card-img">
+                            <div class="product-tag tag-new">New</div>
+                            <img src="food/indomie.jpg" alt="Stir-fry Noodles">
+                        </div>
+                        <div class="menu-card-body">
+                            <h3 class="menu-item-title">Mai Shayi Noodles</h3>
+                            <p class="menu-item-desc">Spicy stir-fry noodles tossed with fresh veggies and sausage.</p>
+                            <div class="menu-card-footer">
+                                <span class="menu-price">₦2,000</span>
+                                <a href="https://wa.me/2349137421838?text=Order:%20Noodles"
+                                    class="btn btn-sm btn-primary">Add <i data-lucide="plus" size="16"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Food Item: Yam Porridge -->
+                    <div class="menu-card" data-category="soups">
+                        <div class="menu-card-img">
+                            <img src="food/yampor.jpg" alt="Yam Porridge">
+                        </div>
+                        <div class="menu-card-body">
+                            <h3 class="menu-item-title">Asaro Elevate</h3>
+                            <p class="menu-item-desc">Soft yam cubes slow-cooked in rich palm oil broth & crayfish.</p>
+                            <div class="menu-card-footer">
+                                <span class="menu-price">₦2,500</span>
+                                <a href="https://wa.me/2349137421838?text=Order:%20Yam%20Porridge"
+                                    class="btn btn-sm btn-primary">Add <i data-lucide="plus" size="16"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- HIDDEN ITEMS (Show when "View Full Menu" is clicked) -->
+                    <div class="menu-card hidden-menu-item" data-category="drinks">
+                        <div class="menu-card-img">
+                            <div class="product-tag tag-new" style="background-color: #000;">Chilled</div>
+                            <!-- A placeholder visual since we don't have drink images -->
+                            <div
+                                style="width: 100%; height: 100%; background: #eaeaea; display:flex; align-items:center; justify-content:center;">
+                                <i data-lucide="cup-soda" size="48" color="#a0a0a0"></i>
+                            </div>
+                        </div>
+                        <div class="menu-card-body">
+                            <h3 class="menu-item-title">Chilled Zobo Drink</h3>
+                            <p class="menu-item-desc">Ice-cold, refreshing hibiscus tea sweetened to perfection.</p>
+                            <div class="menu-card-footer">
+                                <span class="menu-price">₦1,000</span>
+                                <a href="https://wa.me/2349137421838?text=Order:%20Zobo%20Drink"
+                                    class="btn btn-sm btn-primary">Add <i data-lucide="plus" size="16"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-card hidden-menu-item" data-category="drinks">
+                        <div class="menu-card-img">
+                            <div
+                                style="width: 100%; height: 100%; background: #eaeaea; display:flex; align-items:center; justify-content:center;">
+                                <i data-lucide="glass-water" size="48" color="#a0a0a0"></i>
+                            </div>
+                        </div>
+                        <div class="menu-card-body">
+                            <h3 class="menu-item-title">Bottled Water</h3>
+                            <p class="menu-item-desc">Premium cold table water.</p>
+                            <div class="menu-card-footer">
+                                <span class="menu-price">₦500</span>
+                                <a href="https://wa.me/2349137421838?text=Order:%20Water"
+                                    class="btn btn-sm btn-primary">Add <i data-lucide="plus" size="16"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="menu-card hidden-menu-item" data-category="soups">
+                        <div class="menu-card-img">
+                            <div
+                                style="width: 100%; height: 100%; background: #eaeaea; display:flex; align-items:center; justify-content:center;">
+                                <i data-lucide="soup" size="48" color="#a0a0a0"></i>
+                            </div>
+                        </div>
+                        <div class="menu-card-body">
+                            <h3 class="menu-item-title">Egusi Soup + Pounded Yam</h3>
+                            <p class="menu-item-desc">Rich melon soup packed with assorted meats, served with soft
+                                pounded yam.</p>
+                            <div class="menu-card-footer">
+                                <span class="menu-price">₦4,000</span>
+                                <a href="https://wa.me/2349137421838?text=Order:%20Egusi%20and%20Pounded%20Yam"
+                                    class="btn btn-sm btn-primary">Add <i data-lucide="plus" size="16"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="mt-5 text-center" id="viewAllContainer" style="margin-top: 50px;">
+                    <!-- Functionality: Click reveals the hidden items in HTML -->
+                    <button class="btn btn-outline-red btn-lg" id="viewAllBtn">View Full Menu</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Fun Fast Food Promo Section replacing the App Download -->
+        <section id="how-it-works" class="fun-promo">
+            <div class="container fun-promo-container">
+                <div class="fun-promo-content">
+                    <h2>Hot & Ready in <br><span class="text-yellow">Three Simple Steps.</span></h2>
+                    <p>We've cut out the nonsense. Getting our delicious Naija meals is as easy as pointing a finger.
+                    </p>
+
+                    <div class="steps-list">
+                        <div class="step-item">
+                            <div class="step-icon"><i data-lucide="hand-pointing" size="32"></i></div>
+                            <div class="step-text">
+                                <h4>1. Pick Your Meal</h4>
+                                <p>Tap any of our sizzling meals above.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-icon"><i data-lucide="message-circle" size="32"></i></div>
+                            <div class="step-text">
+                                <h4>2. Send on WhatsApp</h4>
+                                <p>The button automatically drafts your order.</p>
+                            </div>
+                        </div>
+                        <div class="step-item">
+                            <div class="step-icon"><i data-lucide="map-pin" size="32"></i></div>
+                            <div class="step-text">
+                                <h4>3. We Deliver It Hot</h4>
+                                <p>Sit back, relax, and prepare to eat.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="fun-promo-img">
+                    <img src="food/suya.jpg" alt="Hot Belle Food" class="promo-circle-img">
+                    <!-- Clean, realistic icon badges -->
+                    <div class="floating-badge-1">
+                        <i data-lucide="check-circle" size="18" style="vertical-align: middle; margin-right: 4px;"></i>
+                        Authentic
+                    </div>
+                    <div class="floating-badge-2">
+                        <i data-lucide="flame" size="18"
+                            style="vertical-align: middle; margin-right: 4px; color: #FF4D00;"></i> So Spicy
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- NEW: Customer Reviews Section -->
+        <section id="reviews" class="reviews-section">
+            <div class="container">
+                <div class="section-heading text-center">
+                    <h2>What Our <span class="text-red">Customers Say</span></h2>
+                    <p>Don't just take our word for it. Here's what Lagos is saying.</p>
+                </div>
+
+                <div class="reviews-marquee-wrapper">
+                    <div class="reviews-marquee">
+                        <!-- Card 1 -->
+                        <div class="review-card">
+                            <div class="review-stars">
+                                <i data-lucide="star" class="star" fill="currentColor"></i>
+                                <i data-lucide="star" class="star" fill="currentColor"></i>
+                                <i data-lucide="star" class="star" fill="currentColor"></i>
+                                <i data-lucide="star" class="star" fill="currentColor"></i>
+                                <i data-lucide="star" class="star" fill="currentColor"></i>
+                            </div>
+                            <p class="review-text">"The Smoky Party Jollof is out of this world! Delivered hot in
+                                exactly 25 minutes. Best in Lagos hands down."</p>
+                            <div class="review-author">
+                                <div class="author-avatar">CD</div>
+                                <div>
+                                    <h4>Chinedu D.</h4>
+                                    <small>Lekki Phase 1</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div class="review-card">
+                            <div class="review-stars">
+                                <i data-lucide="star" class="star" fill="currentColor"></i>
+                                <i data-lucide="star" class="star" fill="currentColor"></i>
+                                <i data-lucide="star" class="star" fill="currentColor"></i>
+                                <i data-lucide="star" class="star" fill="currentColor"></i>
+                                <i data-lucide="star" class="star" fill="currentColor"></i>
+                            </div>
+                            <p class="review-text">"I order their Goat Meat Pepper Soup every Friday. It is consistently
+                                fresh, spicy, and the packaging is super clean."</p>
+                            <div class="review-author">
+                                <div class="author-avatar" style="background:var(--primary-yellow); color:#000;">BA
+                                </div>
+                                <div>
+                                    <h4>Bisi A.</h4>
+                                    <small>Ikeja GRA</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div class="review-card">
+                            <div class="review-stars">
+                                <i data-lucide="star" class="star" fill="currentColor"></i>
+                                <i data-lucide="star" class="star" fill="currentColor"></i>
+                                <i data-lucide="star" class="star" fill="currentColor"></i>
+                                <i data-lucide="star" class="star" fill="currentColor"></i>
+                                <i data-lucide="star" class="star" fill="currentColor"></i>
+                            </div>
+                            <p class="review-text">"Ordering on WhatsApp makes it so easy. The Dodo and Suya combo saved
+                                my life during late night shifts!"</p>
+                            <div class="review-author">
+                                <div class="author-avatar" style="background:#000; color:#fff;">OT</div>
+                                <div>
+                                    <h4>Olawale T.</h4>
+                                    <small>Victoria Island</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- DUPLICATES FOR INFINITE SCROLLING -->
+                        <!-- Card 1 Duplicate -->
+                        <div class="review-card">
+                            <div class="review-stars">
+                                <i data-lucide="star" class="star" fill="currentColor"></i>
+                                <i data-lucide="star" class="star" fill="currentColor"></i>
+                                <i data-lucide="star" class="star" fill="currentColor"></i>
+                                <i data-lucide="star" class="star" fill="currentColor"></i>
+                                <i data-lucide="star" class="star" fill="currentColor"></i>
+                            </div>
+                            <p class="review-text">"The Smoky Party Jollof is out of this world! Delivered hot in
+                                exactly 25 minutes. Best in Lagos hands down."</p>
+                            <div class="review-author">
+                                <div class="author-avatar">CD</div>
+                                <div>
+                                    <h4>Chinedu D.</h4>
+                                    <small>Lekki Phase 1</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 2 Duplicate -->
+                        <div class="review-card">
+                            <div class="review-stars">
+                                <i data-lucide="star" class="star" fill="currentColor"></i>
+                                <i data-lucide="star" class="star" fill="currentColor"></i>
+                                <i data-lucide="star" class="star" fill="currentColor"></i>
+                                <i data-lucide="star" class="star" fill="currentColor"></i>
+                                <i data-lucide="star" class="star" fill="currentColor"></i>
+                            </div>
+                            <p class="review-text">"I order their Goat Meat Pepper Soup every Friday. It is consistently
+                                fresh, spicy, and the packaging is super clean."</p>
+                            <div class="review-author">
+                                <div class="author-avatar" style="background:var(--primary-yellow); color:#000;">BA
+                                </div>
+                                <div>
+                                    <h4>Bisi A.</h4>
+                                    <small>Ikeja GRA</small>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Card 3 Duplicate -->
+                        <div class="review-card">
+                            <div class="review-stars">
+                                <i data-lucide="star" class="star" fill="currentColor"></i>
+                                <i data-lucide="star" class="star" fill="currentColor"></i>
+                                <i data-lucide="star" class="star" fill="currentColor"></i>
+                                <i data-lucide="star" class="star" fill="currentColor"></i>
+                                <i data-lucide="star" class="star" fill="currentColor"></i>
+                            </div>
+                            <p class="review-text">"Ordering on WhatsApp makes it so easy. The Dodo and Suya combo saved
+                                my life during late night shifts!"</p>
+                            <div class="review-author">
+                                <div class="author-avatar" style="background:#000; color:#fff;">OT</div>
+                                <div>
+                                    <h4>Olawale T.</h4>
+                                    <small>Victoria Island</small>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Huge Commercial Footer -->
+    <footer class="site-footer" id="contact">
+        <div class="container footer-grid">
+            <div class="footer-col brand-col">
+                <a href="#" class="brand-logo footer-logo">
+                    <span class="brand-belle text-white">Belle</span><span class="brand-food text-yellow">Food</span>
+                </a>
+                <p>Delivering hot, authentic Nigerian cuisine right to your door. Good food, fast delivery, zero stress.
+                </p>
+                <div class="social-links">
+                    <a href="#"><i data-lucide="facebook"></i></a>
+                    <a href="#"><i data-lucide="twitter"></i></a>
+                    <a href="#"><i data-lucide="instagram"></i></a>
+                    <a href="#"><i data-lucide="youtube"></i></a>
+                </div>
             </div>
 
-            <div class="menu-grid" id="menu-grid">
-                <!-- Javascript will populate this -->
+            <div class="footer-col">
+                <h3>Legal & Privacy</h3>
+                <ul>
+                    <li><a href="#" data-modal="termsModal" class="nav-link-close">Terms & Conditions</a></li>
+                    <li><a href="#" data-modal="privacyModal" class="nav-link-close">Privacy Policy</a></li>
+                    <li><a href="#" data-modal="cookieModal" class="nav-link-close">Cookie Policy</a></li>
+                </ul>
             </div>
-        </div>
-    </section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container footer-inner">
-            <div class="footer-brand">
-                <h2>BELLE<span class="accent">.</span></h2>
-                <p>Premium delivery for the elite taste.</p>
-            </div>
-            <div class="footer-links">
-                <a href="#">Instagram</a>
-                <a href="#">Twitter</a>
+            <div class="footer-col">
+                <h3>Contact Info</h3>
+                <ul>
+                    <li style="color: #9AA0A6;"><i data-lucide="phone" size="16"
+                            style="display:inline; vertical-align:middle; margin-right:5px;"></i> 09137421838</li>
+                    <li style="color: #9AA0A6;"><i data-lucide="map-pin" size="16"
+                            style="display:inline; vertical-align:middle; margin-right:5px;"></i> Lagos, Nigeria</li>
+                    <li style="color: #9AA0A6;"><i data-lucide="clock" size="16"
+                            style="display:inline; vertical-align:middle; margin-right:5px;"></i> Open 24/7</li>
+                </ul>
             </div>
         </div>
         <div class="footer-bottom">
-            &copy; 2025 BelleFood.
+            <div class="container">
+                <p>&copy; 2026 BelleFood Restaurants Ltd. All Rights Reserved. Trademarks respectfully acknowledged.</p>
+            </div>
         </div>
     </footer>
 
+    <!-- UI MODALS FOR LEGAL TEXTS -->
+    <!-- Terms Modal -->
+    <div class="modal" id="termsModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Terms & Conditions</h3>
+                <button class="close-modal"><i data-lucide="x"></i></button>
+            </div>
+            <div class="modal-body">
+                <p>Welcome to BelleFood! By using our website and ordering via WhatsApp, you agree to these terms.</p>
+                <p><strong>1. Ordering & Delivery:</strong> All orders are subject to availability. Delivery times given
+                    are estimates. Delivery fees vary by distance from our dispatch hubs in Lagos.</p>
+                <p><strong>2. Pricing:</strong> Prices on the menu are subject to change. The final price, including
+                    delivery, will be confirmed by our agent on WhatsApp prior to processing.</p>
+                <p><strong>3. Cancellations:</strong> Orders cannot be cancelled once food preparation has commenced.
+                    Repeated fake orders will lead to a number ban.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Privacy Modal -->
+    <div class="modal" id="privacyModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Privacy Policy</h3>
+                <button class="close-modal"><i data-lucide="x"></i></button>
+            </div>
+            <div class="modal-body">
+                <p>Your privacy is critically important to us.</p>
+                <p><strong>Data Collection:</strong> We only collect the information you voluntarily provide to us via
+                    WhatsApp (Name, Phone Number, Delivery Address).</p>
+                <p><strong>Data Usage:</strong> This data is used solely to route and deliver your food safely. We do
+                    not sell your data to third-party marketers or data brokers.</p>
+                <p><strong>Security:</strong> We implement standard security measures to keep your delivery data safe
+                    during transit.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Cookie Modal -->
+    <div class="modal" id="cookieModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Cookie Policy</h3>
+                <button class="close-modal"><i data-lucide="x"></i></button>
+            </div>
+            <div class="modal-body">
+                <p><strong>What are cookies?</strong> Cookies are tiny files saved on your device to make web browsing
+                    faster.</p>
+                <p><strong>How we use them:</strong> BelleFood uses strict, minimal cookies just to ensure the website
+                    runs smoothly on your phone and remembers your theme/cache preferences.</p>
+                <p><strong>Tracking:</strong> We do NOT use invasive, cross-site tracking cookies. You are completely
+                    safe while browsing our menu.</p>
+            </div>
+        </div>
+    </div>
+
     <script src="script.js"></script>
-    <script>
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('/sw.js').catch(() => { });
-            });
-        }
-    </script>
 </body>
 
 </html>
